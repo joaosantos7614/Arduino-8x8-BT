@@ -12,8 +12,7 @@ var LedMatrix = [
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0]
 ];
-let bluetoothDevice;
-let server;
+let port;
 let writer;
 
 // creates the grid
@@ -68,21 +67,7 @@ function clearAll(){
 }
 
 async function connect() {
-    console.log('Connecting to Bluetooth...');
-    try {
-        bluetoothDevice = await navigator.bluetooth.requestDevice({
-            //filters: [{ services: [0xFFE0] }] // Replace with your Bluetooth service UUID
-            acceptAllDevices: true
-        });
-        
-        // Connect to the chosen Bluetooth device
-        server = await bluetoothDevice.gatt.connect();
-
-    } catch (error) {
-        console.error('Error:', error);
-    }
-    
-    /*
+    console.log('Connecting to Serial...');
     try {
         port = await navigator.serial.requestPort();
         await port.open({ baudRate: 9600 });
@@ -98,5 +83,4 @@ async function connect() {
     } catch (error) {
         console.error('Error:', error);
     }
-    */
 }
