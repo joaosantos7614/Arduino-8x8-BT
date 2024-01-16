@@ -1,4 +1,5 @@
 So this basically does the same as the serial connection, but uses a Bluetooth to serial module (HC-06)
+(check the original project at https://github.com/joaosantos7614/Arduino-8x8-serial)
 
 Achieved:
 - Control the matrix using a bluetooth connection
